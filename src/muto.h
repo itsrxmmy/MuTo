@@ -11,8 +11,6 @@
 namespace muto
 {
 
-	
-
 	std::string name = "muto";
 	std::string repository = "unreleased";
 	std::string documentation = "unreleased";
