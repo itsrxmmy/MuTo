@@ -6,16 +6,18 @@
 #include <cmath>
 #include <string>
 
-#include "rydo.h"
+#include "muto.h"
 
 
 int main(int argc, char* argv[])
 {
 
-	rydo::output::write("version", rydo::versionID);
-	rydo::output::write("credit", rydo::credit);
-	rydo::output::blank();
+	muto::output::write("version", muto::versionID);
+	muto::output::write("credit", muto::credit);
+	muto::output::blank();
 	return 0;
 
 }
+
+
 
