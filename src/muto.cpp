@@ -63,14 +63,15 @@ int main(int argc, char* argv[])
 
 			std::string sprint_argv[argc];
 
-			// parse input
+			// organize & parse input
 			for (int i=3 ; i < argc ; i++)
 			{
-				if (argv[i] != "--endl" && argv[i] != "print" && argv[i] != "muto")
+				if (i == 3 && args[i] == "--endl")
 				{
-
+					
+				} else
+				{
 					sprint_argv[i] = argv[i];
-
 				}
 			}
 

@@ -18,7 +18,7 @@ namespace muto
 	std::string repository = "unreleased";
 	std::string documentation = "unreleased";
 	std::string credit = "developed by formik#6548";
-	std::string version = "1.2.1";
+	std::string version = "1.2.4";
 	std::string build = "dev";
 	std::string versionID = version + "-" + build;
 	std::string string_starter = "\t->[" + name + "] ";
