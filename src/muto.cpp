@@ -26,23 +26,56 @@ int main(int argc, char* argv[])
 		if (args[1] == "--version")
 		{
 
-			muto::output::write("version", muto::versionID);
+			muto::output::std("version", muto::versionID);
 		
 		} else if (args[1] == "--credit")
 		{
 
-			muto::output::write("credit", muto::credit);
+			muto::output::std("credit", muto::credit);
 		
 		} else if (args[1] == "--repo")
 		{
 
-			muto::output::write("repository", muto::repository);
+			muto::output::std("repository", muto::repository);
 		
 		} else if (args[1] == "--docs")
 		{
 
-			muto::output::write("documentation", muto::documentation);
+			muto::output::std("documentation", muto::documentation);
 		
+		} else if (args[1] == "print" || args[1] == "echo")
+		{
+
+			std::string seperator = " ";
+			bool endls;
+
+			if (argc > 3)
+			{
+
+				bool endls = argv[3] == "--endl";
+			
+			} else
+			{
+
+				muto::output::errlog(211, "insufficient arguments");
+
+			}
+
+			std::string sprint_argv[argc];
+
+			// parse input
+			for (int i=3 ; i < argc ; i++)
+			{
+				if (argv[i] != "--endl" && argv[i] != "print" && argv[i] != "muto")
+				{
+
+					sprint_argv[i] = argv[i];
+
+				}
+			}
+
+			muto::output::sprint(sprint_argv, endls);
+
 		} else
 		{
 		
@@ -58,6 +91,7 @@ int main(int argc, char* argv[])
 	return 0;
 
 }
+
 
 
 

@@ -6,6 +6,9 @@
 #include <cmath>
 #include <string>
 
+template <typename T>
+int len(T const & object);
+
 
 
 namespace muto
@@ -15,22 +18,33 @@ namespace muto
 	std::string repository = "unreleased";
 	std::string documentation = "unreleased";
 	std::string credit = "developed by formik#6548";
-	std::string version = "1.0.2";
+	std::string version = "1.2.1";
 	std::string build = "dev";
 	std::string versionID = version + "-" + build;
 	std::string string_starter = "\t->[" + name + "] ";
 
-	std::string input(std::string title, std::string prompt)
+	namespace input
 	{
-		std::string uinput;
-		std::cout << string_starter << title << ": " << prompt << " ? [Y/n]: ";
-		std::cin >> uinput;
-		std::cout << std::endl;
+		std::string yesno(std::string title, std::string prompt)
+		{
+			std::string uinput;
+			std::cout << string_starter << title << ": " << prompt << " ? [Y/n]: ";
+			std::cin >> uinput;
+			std::cout << std::endl;
+		}
+
+		std::string std(std::string title, std::string prompt)
+		{
+			std::string uinput;
+			std::cout << string_starter << title << ": " << prompt << " -> ";
+			std::cin >> uinput;
+			std::cout << std::endl;
+		}
 	}
 
 	namespace output
 	{
-		void write(std::string title, std::string message)
+		void std(std::string title, std::string message)
 		{
 			std::cout << string_starter << title << ": " << message << std::endl;
 		}
@@ -44,8 +58,67 @@ namespace muto
 		{
 			std::cout << std::endl;
 		}
+
+		void sprint(std::string outv[], bool endl)
+		{
+
+			std::string seperator = " ";
+
+			for (int i=0 ; i < len(outv) ; i++)
+			{
+				if (endl)
+				{
+					std::cout << outv[i] << std::endl;
+				} else 
+				{
+
+					std::cout << outv[i] << seperator;
+
+				}
+			}
+
+
+			if (!endl)
+			{
+
+				std::cout << std::endl;
+
+			}
+
+			
+
+		}
+
 	}
 }
+
+
+
+
+
+
+
+template <typename T>
+int len(T const & object)
+{
+
+	int length;
+
+    try
+	{
+
+		int length = sizeof(object) / sizeof(int);
+
+	} catch (...)
+	{
+
+		muto::output::errlog(314, "failed to get object size");
+
+	}
+
+	return length;
+}
+
 
 
 
