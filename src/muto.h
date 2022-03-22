@@ -15,17 +15,17 @@ namespace muto
 {
 
 	std::string name = "muto";
-	std::string repository = "unreleased";
-	std::string documentation = "unreleased";
+	std::string repository = "https://github.com/itsrxmmy/muto";
+	std::string documentation = "https://github.com/itsrxmmy/muto/blob/main/DOCS.md";
 	std::string credit = "developed by formik#6548";
-	std::string version = "1.2.4";
+	std::string version = "1.2.6";
 	std::string build = "dev";
 	std::string versionID = version + "-" + build;
 	std::string string_starter = "\t->[" + name + "] ";
 
 	namespace input
 	{
-		std::string yesno(std::string title, std::string prompt)
+		std::string yninput(std::string title, std::string prompt)
 		{
 			std::string uinput;
 			std::cout << string_starter << title << ": " << prompt << " ? [Y/n]: ";
