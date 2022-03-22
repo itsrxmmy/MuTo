@@ -19,7 +19,7 @@ namespace muto
 	std::string documentation = "https://github.com/itsrxmmy/muto/blob/main/DOCS.md";
 	std::string credit = "developed by formik#6548";
 	std::string version = "1.2.6";
-	std::string build = "dev";
+	std::string build = "alpha";
 	std::string versionID = version + "-" + build;
 	std::string string_starter = "\t->[" + name + "] ";
 
